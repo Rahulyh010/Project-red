@@ -1,0 +1,38 @@
+#menspage{
+    width:80%;
+    display:flex;
+    margin:auto;
+    justify-content: space-around;
+    margin-top: 50px;
+    padding:25px 0px;
+    
+}
+.sub{
+    width:40%;
+    
+}
+
+img{
+   width:40%;
+   margin-left:50px;
+}
+p,h2,span{
+    font-size:30px;
+}
+p{
+    color:gray;
+}
+span{
+    margin-right: 5px;
+}
+.one{
+    font-size: 37px;
+    font-weight: bolder;
+}
+.two{
+    color:gray;
+    text-decoration-line: line-through;
+}
+.three{
+color:green;
+}
