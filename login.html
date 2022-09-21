@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #5874ff;
+        }
+        .login {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 300px;
+            margin: 60px auto;
+            padding: 20px;
+            gap: 20px;
+            display: grid; 
+            border-radius: 12px;   
+            background-color: white; 
+            /* border: 2px solid black;   */
+        }
+
+        h3 {
+            margin: 0;
+            /* border: 2px solid black;  */
+            font-weight: 100; 
+            color: rgb(162, 162, 162);
+        }
+
+        input {
+            /* border: 2px solid black;  */
+            width: 98%;
+            border: 0;
+            margin: 0 0 20px 0;
+            padding: 2px;
+            font-size: large;
+            outline: 0px;
+            border-bottom: 1px solid rgb(73, 73, 73);
+        }
+        h1{
+            text-align: center;  
+            margin-bottom: 50px ;
+        }
+
+        button {
+            width: 100%;
+            border: 0;
+            padding: 10px;
+            color: white;   
+            cursor: pointer;  
+            font-size: large;
+            background-image: linear-gradient(to right, #5874ff, rgb(0, 21, 255));
+            /* background-color: ; */ 
+        }
+        .login-2{ 
+            margin-top: 30px;
+            text-align: center; 
+        }
+        p{
+            color: rgb(162, 162, 162);  
+        }
+        a{
+            text-decoration: none; 
+        }
+        a:hover{
+            text-decoration: underline; 
+        }
+
+        @media all and (max-width:450px) {
+            .login{
+                width: 250px; 
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <h1> Login </h1>
+        <div>
+            <h3> Email </h3>
+            <input type="email" name="email" id="email">
+            <h3> Password </h3>
+            <input type="password" name="pass" id="pass">
+            <button onclick="fun()"> Login </button>
+        </div>
+        <div class="login-2">
+            <p> Forgot Password? </p>
+            <p> Don't have an account? <a href=""> Sign up </a> </p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    let arr = [
+        { name: "Tushit Saxena ", email: "tushit@gmail.com", password: "tushit" }
+    ];
+
+    console.log(arr);
+    // saved data in Local Storage ; 
+    localStorage.setItem("data", JSON.stringify(arr));
+
+    // taking data from Local Storage ;  
+    let data = JSON.parse(localStorage.getItem("data"));
+
+    function fun() {
+        let gmail = document.querySelector("#email").value;
+        let pass = document.querySelector("#pass").value;
+
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].password == pass && data[i].email == gmail) {
+                alert("Loin Successfull");
+
+                // to give location fore other page 
+                // window.location.href =""
+            }
+            else if (data[i].email != gmail) {
+                alert("email is wrong");
+            }
+            else if (data[i].email == gmail) {
+                if (data[i].password == pass) {
+                    alert("password is wrong");
+                }
+            }
+            else {
+                alert("wrong information");
+            }
+        }
+    }
+
+</script>
